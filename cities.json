@@ -1,7 +1,7 @@
 {"cities": [
-      {"id": "0", "name": "Ekaterinburg", "runame":"Екатеринбург"},
-      {"id": "1", "name": "Novosibirsk", "runame":"Новосибирск"},
-      {"id": "2", "name": "Kazan", "runame":"Казань"},
-      {"id": "3", "name": "Izhevsk", "runame":"Ижевск"}
+      {"id": "0", "name": "Ekaterinburg", "runame":"Екатеринбург", "center": "56.8390998, 60.6068993","zoom": "15.21"},
+      {"id": "1", "name": "Novosibirsk", "runame":"Новосибирск", "center": "56.8390998, 60.6068993","zoom": "15.21"},
+      {"id": "2", "name": "Kazan", "runame":"Казань", "center": "56.8390998, 60.6068993","zoom": "15.21"},
+      {"id": "3", "name": "Izhevsk", "runame":"Ижевск", "center": "56.8390998, 60.6068993","zoom": "15.21"}
    ]
 }

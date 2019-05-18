@@ -1,0 +1,1 @@
+INSERT INTO 'streets' (name, len) VALUES ('Московская улица', 7.719)

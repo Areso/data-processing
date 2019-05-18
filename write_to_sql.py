@@ -1,8 +1,8 @@
 import MySQLdb
 
-import mysql.connector
-from mysql.connector import Error
-from mysql.connector import errorcode
+#import mysql.connector
+#from mysql.connector import Error
+#from mysql.connector import errorcode
 import streets
 
 
@@ -24,9 +24,9 @@ mydbuser = mydbuser.rstrip()
 
 mydbpass = lineList[3]
 mydbpass = mydbpass.rstrip()
-import mysql.connector
-from mysql.connector import Error
-from mysql.connector import errorcode
+#import mysql.connector
+#from mysql.connector import Error
+#from mysql.connector import errorcode
 try:
    connection = mysql.connector.connect(host=mydbhost,
                              database=mydbname,

@@ -24,7 +24,7 @@ class CityPolygon(object):
         return False
 
     def get_comfort_level(self) -> float:
-        return 0.0 / self.area
+        return self.objects_in_50 / self.area
 
 if __name__ == '__main__':
     print("Hello world")

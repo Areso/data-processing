@@ -94,7 +94,7 @@ def goods_at_street(path_to_goods: str, streets: Dict[str, int], green_areas: Li
     longitudes = goods["longitude"].values
     for i in range(len(address)):
         for k in range(len(green_areas)):
-            if green_areas[k].intercepts([latitudes[i], longitudes[i]]):
+            if green_areas[k].intercepts([longitudes[i], latitudes[i]]):
                 green_areas[k].objects_in_50 += 1
 
         if address[i] != '':
@@ -211,9 +211,10 @@ if __name__ == '__main__':
             parks[i].color = park_colors[2]
         elif parks[i].get_comfort_level() > level2:
             parks[i].color = park_colors[1]
+        print(parks[i].name, parks[i].get_comfort_level(), parks[i].color)
 
     park_jsoned = parks_geojson(parks)
-    with open("parks.json", encoding="utf-8", mode='w') as outfile:
+    with open("Ekaterinburg.gardens.json", encoding="utf-8", mode='w') as outfile:
         json.dump(park_jsoned, outfile, ensure_ascii=False)
 
     exit(0)
@@ -227,7 +228,6 @@ if __name__ == '__main__':
         json_districts["districts"].append(district_json(i, district, district_streets[district.name], good_streets))
         i += 1
 
-    with open("districts.json", encoding="utf-8", mode='w') as outfile:
+    with open("Ekaterinburg.districts.json", encoding="utf-8", mode='w') as outfile:
         json.dump(json_districts, outfile, ensure_ascii=False)
-
-    print("completed!")
+    print("Completed")

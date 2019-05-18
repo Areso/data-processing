@@ -1,0 +1,5 @@
+#00ff00 #green
+#ffff00 #yellow
+#ffd500 #orange
+#ff8000 #red-orange
+#ff0000 #red

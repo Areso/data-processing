@@ -158,6 +158,7 @@ def parks_geojson(parks: List[CityPolygon]) -> Dict[str, list]:
         jsoned["parks"].append({"id": "%d" % park.id,
                                 "name": "%s" % park.name,
                                 "area": "%.3f" % park.area,
+                                "services": "%d" % park.objects_in_50,
                                 "color": "%s" % park.color,
                                 "coords": park.coords})
     return jsoned
@@ -228,3 +229,5 @@ if __name__ == '__main__':
 
     with open("districts.json", encoding="utf-8", mode='w') as outfile:
         json.dump(json_districts, outfile, ensure_ascii=False)
+
+    print("completed!")

@@ -1,10 +1,9 @@
-{"districts": [
+{"gardens": [
       {"id": "1",
-       "name": "Эльмаш",
+       "name": "Зеленая роща",
        "area": "50",
-       "streets": "200",
-       "goodstreets": "50",
-       "color": "red",
+       "services": "50",
+       "color": "green",
        "coords":[
             {
                "1":"40, 80",
@@ -15,10 +14,9 @@
          ]
       },
       {"id": "2",
-       "name": "Уралмаш",
-       "area": "50",
-       "streets": "100",
-       "goodstreets": "50",
+       "name": "Уктусский лесопарк",
+       "area": "20",
+       "services": "50",
        "color": "yellow",
        "coords":[
             {

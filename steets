@@ -10,7 +10,7 @@ def street_len(geo_coords: List[List[float]]) -> float:
     :param geo_coords: List of latitudes and longitudes of the street
     :return: Length of the street
     """
-    if len(geo_coords) < 2:
+    if len(geo_coords) < 2:  # If a street has less than two points - it has length 0
         return 0.0
     street_length = 0.0
     # approximate radius of earth in km

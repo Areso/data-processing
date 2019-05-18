@@ -43,7 +43,7 @@ def streets_dict(path_to_geojson: str) -> Dict[str, float]:
                 street_dicts[s["properties"]["NAME"]] = street_len(s["geometry"]["coordinates"][0])
             else:
                 street_dicts[s["properties"]["NAME"]] += street_len(s["geometry"]["coordinates"][0])
-
+    #  Drop not streets
     street_dicts.pop("Подъезд к п. Палкинский торфяник")
     street_dicts.pop("ЕКАД")
     street_dicts.pop("Пермь — Екатеринбург")

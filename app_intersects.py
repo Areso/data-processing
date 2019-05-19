@@ -18,6 +18,7 @@ def read_polygons(path_to_polygons, park=False):
 
 
 if __name__ == '__main__':
+    #python3 app_intersects.py 56.8463371 60.6142361 1.0
     point = Point([float(sys.argv[-3]), float(sys.argv[-2])])
     parks = bool(float(sys.argv[-1]))
     path_to_polygons = "parks.json"

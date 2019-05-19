@@ -155,7 +155,7 @@ def park_list(path_to_parks: str) -> List[CityPolygon]:
 def parks_geojson(parks: List[CityPolygon]) -> Dict[str, list]:
     jsoned = {"parks": []}
     for park in parks:
-        jsoned["parks"].append({"id": "%d" % park.id,
+        jsoned["gardens"].append({"id": "%f" % park.id,
                                 "name": "%s" % park.name,
                                 "area": "%.3f" % park.area,
                                 "services": "%d" % park.objects_in_50,

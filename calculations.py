@@ -119,7 +119,6 @@ def district_json(id: int, district: CityPolygon, district_streets: List[str], g
                  "area": "%.3f" % district.area,
                  "streets": "%d" % all_streets,
                  "color": "%s" % color,
-                 "goodstreets": "%d" % good_count,
                  "coords": district.coords}
 
     return json_dict
@@ -153,13 +152,14 @@ def park_list(path_to_parks: str) -> List[CityPolygon]:
 
 
 def parks_geojson(parks: List[CityPolygon]) -> Dict[str, list]:
-    jsoned = {"parks": []}
+    jsoned = {"gardens": []}
     for park in parks:
-        jsoned["gardens"].append({"id": "%f" % park.id,
+        jsoned["gardens"].append({"id": "%d" % park.id,
                                 "name": "%s" % park.name,
                                 "area": "%.3f" % park.area,
                                 "services": "%d" % park.objects_in_50,
                                 "color": "%s" % park.color,
+                                "level": "%.3f" % park.level,
                                 "coords": park.coords})
     return jsoned
 
@@ -205,11 +205,13 @@ if __name__ == '__main__':
 
     for i in range(len(parks)):
         parks[i].color = park_colors[0]
-        if parks[i].get_comfort_level() > level4:
+        comfort_level_tmp = parks[i].get_comfort_level()
+        parks[i].level = comfort_level_tmp
+        if comfort_level_tmp > level4:
             parks[i].color = park_colors[3]
-        elif parks[i].get_comfort_level() > level3:
+        elif comfort_level_tmp > level3:
             parks[i].color = park_colors[2]
-        elif parks[i].get_comfort_level() > level2:
+        elif comfort_level_tmp > level2:
             parks[i].color = park_colors[1]
         print(parks[i].name, parks[i].get_comfort_level(), parks[i].color)
 

@@ -15,6 +15,7 @@ class CityPolygon(object):
         self.coords = ["%f, %f" % (self.coords[i][0], self.coords[i][1]) for i in range(len(self.coords))]
         self.objects_in_50: int = 0
         self.color: str = ''
+        self.level: str = '' #added
 
 
     def intercepts(self, point_coordinates: Union[List[float], Tuple[float, float]]) -> bool:

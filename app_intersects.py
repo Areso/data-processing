@@ -12,7 +12,7 @@ def read_polygons(path_to_polygons, park=False):
         layer = "parks"
     with open(path_to_polygons, encoding="utf-8") as file:
         print(layer)
-        polygons = json.load(file)['parks']
+        polygons = json.load(file)[layer]
         return {p["id"]: Polygon([(float(cords.split(', ')[1]), float(cords.split(', ')[0]))
                                   for cords in p["coords"]]) for p in polygons}
 

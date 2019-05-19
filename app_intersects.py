@@ -8,10 +8,11 @@ import sys
 
 def read_polygons(path_to_polygons, park=False):
     layer = "districts"
-    if park:
+    if parks:
         layer = "parks"
     with open(path_to_polygons, encoding="utf-8") as file:
-        polygons = json.load(file)[layer]
+        print(layer)
+        polygons = json.load(file)['parks']
         return {p["id"]: Polygon([(float(cords.split(', ')[1]), float(cords.split(', ')[0]))
                                   for cords in p["coords"]]) for p in polygons}
 
